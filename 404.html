@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Koyomi</title>
+<!--
+  GitHub Pages SPA fallback (Track 1 §5.2 — history routing under a sub-path).
+  Pages serves this for any unknown path; it redirects back to the SPA shell,
+  preserving the requested route so @solidjs/router can resolve it client-side.
+-->
+<script>
+  // Stash the deep-linked path and bounce to the shell. main.jsx restores it.
+  sessionStorage.setItem('koyomi:redirect', location.pathname + location.search + location.hash);
+  location.replace(location.origin + (document.querySelector('base') ? document.querySelector('base').href : '/'));
+</script>
+</head>
+<body></body>
+</html>
