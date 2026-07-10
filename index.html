@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<!-- Strict CSP (carried over from the make-deploy P0 security gate): on-device only, no exfiltration,
+     no eval, no external origins. style 'unsafe-inline' covers Solid's inline style attributes; fonts +
+     scripts + connect are 'self' (the woff2 are vendored, the engine is bundled, data stays on device). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Koyomi</title>
+<meta name="theme-color" content="#fcf8fd">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Koyomi">
+<meta name="color-scheme" content="light">
+<!-- iOS home-screen icon (the web manifest covers Android/Chrome; iOS reads this link). Root-relative so
+     Vite base-prefixes it to the Pages sub-path; the asset ships from spa/public/icons. -->
+<link rel="apple-touch-icon" href="/koyomi-app-public/icons/apple-touch-icon-180.png">
+<link rel="icon" type="image/png" href="/koyomi-app-public/icons/icon-192.png">
+  <script type="module" crossorigin src="/koyomi-app-public/assets/index-CbHR4oX7.js"></script>
+  <link rel="stylesheet" crossorigin href="/koyomi-app-public/assets/index-Bf2wqb9d.css">
+<link rel="manifest" href="/koyomi-app-public/manifest.webmanifest"></head>
+<body>
+<div id="root"></div>
+</body>
+</html>
